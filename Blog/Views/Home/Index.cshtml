@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Blog.Models.Post>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <title>Demo Blog</title>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Blog Demo</h1>
+    </div>
+    <div id="content">
+        <div id="sidebar">
+            <ul>
+                <li><a class="select" href=""> Archive</a></li>
+                <li><a href=""> About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <h2>Posts</h2>
+            @foreach (var post in Model)
+            {
+                <h4><i><a href="@post.Link">@post.Title</a></i></h4>
+                <blockquote>@post.Body</blockquote>
+                <p>@post.DatePosted</p>
+            }
+        </div>
+    </div>
+    <div id="footer">
+        CopyRight &copy; 2019 Cory Beesler
+    </div>
+</div> 
+</body>
+</html>
