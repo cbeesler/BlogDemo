@@ -14,7 +14,7 @@ namespace Blog.Controllers
         public ActionResult Index()
         {
             List<Post> model = new List<Post>();
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB; Initial Catalog=Blog;Integrated Security=SSPI");
+            SqlConnection conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\BlogDB.mdf; Integrated Security = True");
 
             SqlDataReader rdr = null;
 
